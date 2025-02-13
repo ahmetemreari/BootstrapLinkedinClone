@@ -31,7 +31,7 @@ This project is a LinkedIn clone created using Bootstrap and Font Awesome.
 ### 🇹🇷 Türkçe
 1. Projeyi klonlayın:
 ```bash
-git clone https://github.com/yourusername/linkedin-clone.git
+git clone https://github.com/ahmetemreari/BootstrapLinkedinClone.git
 ```
 
 2. Proje dizinine gidin:
@@ -44,7 +44,7 @@ cd linkedin-clone
 ### 🇬🇧 English
 1. Clone the project:
 ```bash
-git clone https://github.com/yourusername/linkedin-clone.git
+git clone https://github.com/ahmetemreari/BootstrapLinkedinClone.git
 ```
 
 2. Navigate to project directory:
