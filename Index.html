@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LinkedIn Clone</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <style>
+        body {
+            background-color: #f3f2ef;
+        }
+        .navbarbg {
+            background-color: white;
+            height: 55px;
+            border-bottom: 1px solid rgba(0,0,0,0.08);
+        }
+        .nav-item {
+            text-align: center;
+        }
+        .nav-link {
+            color: #666666 !important;
+            font-size: 12px;
+            padding: 0 15px !important;
+        }
+        .nav-link i {
+            font-size: 18px;
+        }
+        .nav-link:hover {
+            color: black !important;
+        }
+        .card {
+            border-radius: 8px;
+            border: none;
+            box-shadow: 0 0 0 1px rgba(0,0,0,0.08);
+        }
+        .premium-link {
+            color: #666666;
+            font-size: 12px;
+            text-decoration: none;
+        }
+        .premium-link:hover {
+            color: #0a66c2;
+        }
+        .search-input {
+            background-color: #eef3f8;
+            border: none;
+            border-radius: 4px;
+            padding-left: 40px;
+            font-size: 14px;
+        }
+        .search-container {
+            position: relative;
+        }
+        .search-icon {
+            position: absolute;
+            left: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #666666;
+        }
+        .divider {
+            border-left: 1px solid #666666;
+            height: 100%;
+        }
+        .premium-bar {
+            background-color: #dce6f1;
+            color: #0a66c2;
+            font-size: 12px;
+            padding: 4px 12px;
+            border-radius: 4px;
+            margin: 4px 8px;
+            text-decoration: none;
+        }
+        .premium-bar:hover {
+            text-decoration: underline;
+            background-color: #ccd9e7;
+        }
+        .post-input {
+            border: 1px solid rgba(0,0,0,0.3);
+            border-radius: 35px;
+            padding: 10px 20px;
+            color: #666666;
+            font-size: 14px;
+            width: 100%;
+            cursor: pointer;
+        }
+        .post-input:hover {
+            background-color: rgba(0,0,0,0.08);
+        }
+        .post-button {
+            color: #666666;
+            font-size: 14px;
+            padding: 8px 16px;
+            border-radius: 4px;
+            text-decoration: none;
+        }
+        .post-button:hover {
+            background-color: rgba(0,0,0,0.08);
+        }
+        .news-section {
+            font-size: 14px;
+        }
+        .news-item {
+            padding: 8px 12px;
+            cursor: pointer;
+        }
+        .news-item:hover {
+            background-color: rgba(0,0,0,0.08);
+        }
+        .news-title {
+            font-size: 12px;
+            font-weight: 600;
+            margin-bottom: 4px;
+        }
+        .news-meta {
+            font-size: 12px;
+            color: #666666;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbarbg fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <i class="fab fa-linkedin text-primary" style="font-size: 2rem;"></i>
+            </a>
+            <div class="search-container d-flex flex-grow-1 mx-2">
+                <i class="fas fa-search search-icon"></i>
+                <input class="form-control search-input" type="search" placeholder="Arama yap">
+            </div>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav w-100 justify-content-between">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#">
+                            <i class="fas fa-home"></i><br>
+                            Ana Sayfa
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">
+                            <i class="fas fa-user-friends"></i><br>
+                            Ağım
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">
+                            <i class="fas fa-briefcase"></i><br>
+                            İş İlanları
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">
+                            <i class="fas fa-comment-dots"></i><br>
+                            Mesajlaşma
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">
+                            <i class="fas fa-bell"></i><br>
+                            Bildirimler
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">
+                            <img src="img/profilemre.jpg" class="rounded-circle" style="width: 24px;" alt=""><br>
+                            Ben
+                        </a>
+                    </li>
+                    <li class="nav-item d-flex align-items-center">
+                        <div class="divider"></div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">
+                            <i class="fas fa-th"></i><br>
+                            İş için
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="premium-link" href="#">Premium'u ücretsiz<br>deneyin</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="container" style="margin-top: 80px">
+        <div class="row">
+            <!-- Sol Panel -->
+            <div class="col-3">
+                <div class="card mb-3">
+                    <div class="card-body p-0">
+                        <div class="text-center position-relative">
+                            <div style="height: 60px; background-color: #a0b4b7;"></div>
+                            <img src="https://media.licdn.com/dms/image/v2/D4D03AQF4eslJT_-j1w/profile-displayphoto-shrink_100_100/B4DZOhikaxHcAU-/0/1733582016025?e=1744848000&v=beta&t=_69G3uALYZjEMjiIETel0iyzDCyEMmd1U1f9KEo6vWU" class="rounded-circle position-absolute" style="width: 72px; height: 72px; border: 2px solid white; top: 25px; left: 50%; transform: translateX(-50%);" alt="">
+                        </div>
+                        <div class="p-3 text-center" style="margin-top: 45px;">
+                            <h6 class="mb-1">Ahmet Emre Arı</h6>
+                            <p class="text-muted small mb-2">Jr. Full Stack Developer</p>
+                            <div class="text-start small mt-3">
+                                <div class="mb-2 d-flex justify-content-between">
+                                    <span class="text-muted">Profilinizi kimler görüntüledi</span>
+                                    <span class="text-primary fw-bold">61</span>
+                                </div>
+                                <div class="d-flex justify-content-between">
+                                    <span class="text-muted">Gönderi gösterimi</span>
+                                    <span class="text-primary fw-bold">281</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Orta Panel -->
+            <div class="col-6">
+                <!-- Gönderi Oluştur -->
+                <div class="card mb-3">
+                    <div class="card-body">
+                        <div class="d-flex align-items-center mb-3">
+                            <img src="img/gonderi.jpg" class="rounded-circle me-2" style="width: 48px;" alt="">
+                            <div class="post-input">Gönderi başlatın</div>
+                        </div>
+                        <div class="d-flex justify-content-between">
+                            <a href="#" class="post-button">
+                                <i class="fas fa-image text-primary me-2"></i>Medya
+                            </a>
+                            <a href="#" class="post-button">
+                                <i class="fas fa-briefcase text-success me-2"></i>İş İlanı
+                            </a>
+                            <a href="#" class="post-button">
+                                <i class="fas fa-newspaper text-warning me-2"></i>Yazı yaz
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Gönderi Örneği -->
+                <div class="card mb-3">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between mb-3">
+                            <div class="d-flex">
+                                <img src="https://media.licdn.com/dms/image/v2/D4D0BAQEzt1XBN_yr-A/company-logo_200_200/company-logo_200_200/0/1682007445688/patikadev_logo?e=1747267200&v=beta&t=c6LhbV0fJhbBIppKn4LbVzTtY_IqGvCW3iVm_TV5McI" class="rounded-circle me-2" style="width: 48px;" alt="">
+                                <div>
+                                    <h6 class="mb-0">Patika.dev</h6>
+                                    <p class="text-muted small mb-0">BT Hizmetleri ve BT Danışmanlığı</p>
+                                    <small class="text-muted">1 gün • <i class="fas fa-globe-americas"></i></small>
+                                </div>
+                            </div>
+                            <button class="btn btn-light">
+                                <i class="fas fa-ellipsis-h"></i>
+                            </button>
+                        </div>
+                        <p>Yazılım geliştirme alanında derinleşmek ve uzmanlaşmak adına  Patika.dev Back-end Bootcamp programı. 🚀</p>
+                        <img src="https://picsum.photos/600/400" class="img-fluid rounded mb-3" alt="">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div class="d-flex align-items-center">
+                                <img src="/img/profilemre.jpg" class="me-1" alt="">
+                                <small class="text-muted">Ahmet Emre Arı ve 40 diğer kişi</small>
+                            </div>
+                            <small class="text-muted">9 yorum</small>
+                        </div>
+                        <hr>
+                        <div class="d-flex justify-content-between">
+                            <button class="btn btn-light">
+                                <i class="far fa-thumbs-up me-1"></i>Beğen
+                            </button>
+                            <button class="btn btn-light">
+                                <i class="far fa-comment me-1"></i>Yorum Yap
+                            </button>
+                            <button class="btn btn-light">
+                                <i class="fas fa-share me-1"></i>Paylaş
+                            </button>
+                            <button class="btn btn-light">
+                                <i class="far fa-paper-plane me-1"></i>Gönder
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sağ Panel -->
+            <div class="col-3">
+                <div class="card">
+                    <div class="card-body p-0">
+                        <div class="p-3">
+                            <h6 class="mb-3">LinkedIn Haberler</h6>
+                            <div class="news-section">
+                                <div class="news-item">
+                                    <div class="news-title">JPMorgan begins round of layoffs</div>
+                                    <div class="news-meta">8s önce • 20,262 okuyucu</div>
+                                </div>
+                                <div class="news-item">
+                                    <div class="news-title">Shein, Temu's US sales suffering</div>
+                                    <div class="news-meta">8s önce • 6,876 okuyucu</div>
+                                </div>
+                                <div class="news-item">
+                                    <div class="news-title">Tariffs squeeze small businesses</div>
+                                    <div class="news-meta">8s önce • 4,037 okuyucu</div>
+                                </div>
+                                <div class="news-item">
+                                    <div class="news-title">Joann to close hundreds of stores</div>
+                                    <div class="news-meta">8s önce • 4,005 okuyucu</div>
+                                </div>
+                                <div class="news-item">
+                                    <div class="news-title">Flu cases reach 15-year high</div>
+                                    <div class="news-meta">8s önce • 3,404 okuyucu</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
